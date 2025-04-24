@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classification Result</title>
+</head>
+<body>
+    <h2>Classification Result</h2>
+    <p><strong>Category:</strong> {{ result.category }}</p>
+    <p><strong>Masked Email:</strong></p>
+    <pre>{{ result.masked_email }}</pre>
+    <p><strong>Detected Entities:</strong></p>
+    <ul>
+        {% for entity in result.detected_entities %}
+        <li><strong>{{ entity.classification }}</strong>: {{ entity.entity }} (Position: {{ entity.position }})</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Classify Another Email</a>
+</body>
+</html>
